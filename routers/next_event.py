@@ -14,6 +14,6 @@ def get_db():
         db.close()
 
 
-@ne_router.get("/")
+@ne_router.get("/next_event")
 async def get_next_event(db=Depends(get_db)):
     return db.query(NextEventTruncated).all()
